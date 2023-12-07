@@ -5,21 +5,65 @@
 	<title></title>
 	<link rel="stylesheet" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- bootsnav -->
+     <link rel="stylesheet" href="assets/css/bootsnav.css">
+     <script src="https://kit.fontawesome.com/8215d0dba9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<!-- 1 header -->
 	<div class="parent-text">
 		<div class="text-one">
-			<h2>this is navbar</h2>
+			<!-- <h2>this is navbar</h2> -->
+            <div class="nav-bar-top" style="background-color: #35b3ee; height: 100%; ">
+                <p style=" color:white ; ">🗺️ 114/18/12 Vườn Lài,An Phú Đông,Quận 12,HCM &emsp; 📞 0935.911.775</p>
+            </div>
 		</div>
 		<div class="text-two">
-			<h2>this is menu</h2>
+			<!-- <h2>this is menu</h2> -->
+            <div class="container-nav-menu">
+                <div class="logo-menu">
+                    <!-- logo -->
+                    <img src="imgs/logo3.png" alt="index.html">
+                </div>
+                <div class="main-menu">
+                    <!-- main menu -->
+                    <div id="nav-menu">
+                        <ul class="ul-menu">
+                            <li>
+                                <a href="#trangchu" style="color: #35b3ee;">
+                                    <i class="fas fa-home" style="color: #35b3ee;"> </i>
+                                    Trang chủ
+                                </a>
+                            </li>
+                            <li class=""><a href="#gioithieu">Giới thiệu</a></li>
+                            <li class=""><a href="#experience">Dịch vụ</a></li>
+                            <li class=""><a href="#profiles">Tin tức-Sự kiện</a></li>
+                            <li class=""><a href="#portfolio">Tuyển dụng</a></li>
+                            <li class=""><a href="#clients">Đối tác</a></li>
+                            <li class=""><a href="#contact">Liên hệ</a></li>
+                            <li class=""><a href="#contact"> <i class="fa-solid fa-bars"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</div>
 	<!-- 2 slider -->
 	<div class="text-three">
-		<h2>this is slider</h2>
+		<!-- <h2>this is slider</h2> -->
+        <!-- <div id="slider">
+            <figure>
+                <img src="imgs/bannerr01.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="imgs/bannerr02.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="imgs/bannerr03.jpg" alt="">
+            </figure>
+        </div> -->
 	</div>
 	<!-- 3 body -->
 	<section id="content-text">
@@ -31,12 +75,29 @@
 	<footer id="footer-text">
 		<div class="container-footer">
 			<span><H2>This is footer</H2></span>
-
 		</div>
 	</footer>
 
 
 
 </body>
-
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+     $(window).load(function() {
+      if ($('.container-nav-menu').length > 0) {
+        var _top = $('.container-nav-menu').offset().top - parseFloat($('.container-nav-menu').css('marginTop').replace(/auto/, 0));
+         $(window).scroll(function(evt) {
+          var _y = $(this).scrollTop();
+          if (_y > _top) {
+          $('.container-nav-menu').addClass('fixed');
+          $('.main-1').css("margin-top", "30px")
+          } else {
+          $('.container-nav-menu').removeClass('fixed');
+          $('.main-1').css("margin-top", "0")
+        }
+       })
+      }
+     });
+    });
+   </script>
 </html>
